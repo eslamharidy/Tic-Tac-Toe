@@ -34,3 +34,12 @@ test('Board 3x3 with X and O should be valid', () => {
   ]
   expect(isValidBoard(board)).toBe(true)
 })
+
+test('Boards that contain invalid symbols should be invalid', () => {
+    const board = [
+      [null, 'x', 'x'],
+      ['o', 'NONSENSE', null],
+      [null, 'x', 'I\'m a hacker!']
+    ]
+    expect(isValidBoard(board)).toBe(false)
+  })
